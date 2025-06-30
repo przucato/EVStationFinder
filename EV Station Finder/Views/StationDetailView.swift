@@ -13,6 +13,13 @@ struct StationDetailView: View {
                 .font(.body)
                 .foregroundColor(.secondary)
 
+            if viewModel.fuelStation.fuelType == .electric,
+               let connectors = viewModel.fuelStation.evConnectorTypes {
+                EVConnectorsView(connectors: connectors)
+            }
+            
+            Spacer()
+            
             Button(action: viewModel.openInMaps) {
                 Label("Open in Apple Maps", systemImage: "map")
                     .frame(maxWidth: .infinity)
@@ -21,8 +28,6 @@ struct StationDetailView: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
             }
-
-            Spacer()
         }
         .padding()
         .navigationTitle("Station Details")

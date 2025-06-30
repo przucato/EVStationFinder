@@ -10,14 +10,14 @@ struct FuelStation: Codable, Identifiable {
     let zip: String
     let latitude: Double
     let longitude: Double
-    let fuelTypeCode: String
-    let evConnectorTypes: [String]?
+    let fuelType: FuelType
+    let evConnectorTypes: [EVConnectors]?
     
     enum CodingKeys: String, CodingKey {
         case stationName = "station_name"
         case streetAddress = "street_address"
-        case fuelTypeCode = "fuel_type_code"
-        case evConnectorTypes = "evConnectorTypes"
+        case fuelType = "fuel_type_code"
+        case evConnectorTypes = "ev_connector_types"
         case city, zip, country, state, latitude, longitude
     }
     

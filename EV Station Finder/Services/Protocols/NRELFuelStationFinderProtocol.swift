@@ -1,7 +1,7 @@
 import Foundation
 
 protocol NRELFuelStationFinderProtocol: FuelStationFinderServiceProtocol {
-    var fuelType: String { get }
+    var fuelType: FuelType { get }
     var NRELBaseUrl: String? { get }
     var NRELApiKey: String? { get }
     func getUrl(zipCode: String) -> URL?
@@ -18,7 +18,7 @@ extension NRELFuelStationFinderProtocol {
     
     func getUrl(zipCode: String) -> URL? {
         if let baseUrl = NRELBaseUrl, let apiKey = NRELApiKey,
-           let url = URL(string: baseUrl + "v1.json?fuel_type=\(fuelType)&zip=\(zipCode)&api_key=\(apiKey)") {
+           let url = URL(string: baseUrl + "v1.json?fuel_type=\(fuelType.rawValue)&zip=\(zipCode)&api_key=\(apiKey)") {
             return url
         }
         return nil
