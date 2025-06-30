@@ -26,12 +26,16 @@ final class EVStationSearchViewModelTests: XCTestCase {
     func test_givenStationsFinderServiceSucceed_whenSearchButtonTapped_then() {
         // GIVEN
         let expectedStation = FuelStation(
-            station_name: "Test Station",
-            street_address: "123 Test St",
+            stationName: "Test Station",
+            streetAddress: "123 Test St",
             city: "Testville",
             state: "TS",
             country: "US",
-            zip: "12345"
+            zip: "12345",
+            latitude: 0,
+            longitude: 0,
+            fuelTypeCode: "",
+            evConnectorTypes: nil
         )
         mockFuelStationFinderService.result = .success([expectedStation])
         
@@ -44,7 +48,7 @@ final class EVStationSearchViewModelTests: XCTestCase {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
             XCTAssertFalse(SUT.isLoading)
             XCTAssertEqual(SUT.stations?.count, 1)
-            XCTAssertEqual(SUT.stations?.first?.station_name, "Test Station")
+            XCTAssertEqual(SUT.stations?.first?.stationName, "Test Station")
             XCTAssertNil(SUT.errorMessage)
             expectation.fulfill()
         }

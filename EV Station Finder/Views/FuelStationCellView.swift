@@ -5,16 +5,12 @@ struct FuelStationCellView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(fuelStation.station_name)
+            Text(fuelStation.stationName)
                 .font(.headline)
-            Text("\(fuelStation.street_address), \(fuelStation.city), \(fuelStation.state) \(fuelStation.zip)")
+            Text(fuelStation.fullAddress)
                 .font(.subheadline)
                 .foregroundColor(.secondary)
         }
         .padding()
     }
-}
-
-#Preview {
-    FuelStationCellView(fuelStation: FuelsStationMock.mock[0])
 }

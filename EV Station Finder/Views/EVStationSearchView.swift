@@ -23,10 +23,11 @@ struct EVStationSearchView: View {
                 }
 
                 List(viewModel.stations ?? []) { station in
-                    FuelStationCellView(fuelStation: station)
-                        .onTapGesture {
-                            viewModel.stationTapped(station)
-                        }
+                    NavigationLink {
+                        StationDetailView(viewModel: StationDetailViewModel(mapService: AppleMapsService(), fuelStation: station))
+                    } label: {
+                        FuelStationCellView(fuelStation: station)
+                    }
                 }.overlay(Group {
                     if viewModel.isLoading == false && viewModel.stations?.isEmpty ?? false {
                         Text("Looks like there's no stations near you...")

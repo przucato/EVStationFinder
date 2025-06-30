@@ -1,16 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@, %@, %@ %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@, %2$@, %3$@ %4$@"
-          }
-        }
-      }
-    },
     "Enter ZIP code" : {
 
     },
@@ -26,7 +16,13 @@
     "Looks like there's no stations near you..." : {
 
     },
+    "Open in Apple Maps" : {
+
+    },
     "Search" : {
+
+    },
+    "Station Details" : {
 
     }
   },
