@@ -23,7 +23,7 @@ final class EVStationSearchViewModelTests: XCTestCase {
         mockDataPersistenceService = nil
     }
     
-    func test_givenStationsFinderServiceSucceed_whenSearchButtonTapped_then() {
+    func test_givenStationsFinderServiceSucceed_whenSearchButtonTapped_thenShouldUpdateParametersForSuccess() {
         // GIVEN
         let expectedStation = FuelStation(
             stationName: "Test Station",
@@ -56,7 +56,7 @@ final class EVStationSearchViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
-    func test_givenStationsFinderServiceFails_whenSearchButtonTapped_then() {
+    func test_givenStationsFinderServiceFails_whenSearchButtonTapped_thenShouldUpdateParametersForError() {
         // GIVEN
         let expectedError = FuelStationFinderError.noData
         mockFuelStationFinderService.result = .failure(expectedError)
