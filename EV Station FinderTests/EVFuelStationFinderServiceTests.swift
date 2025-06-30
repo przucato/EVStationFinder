@@ -1,10 +1,3 @@
-//
-//  EVFuelStationFinderServiceTests.swift
-//  EV Station Finder
-//
-//  Created by Priscila Zucato on 29/06/25.
-//
-
 import XCTest
 @testable import EV_Station_Finder
 

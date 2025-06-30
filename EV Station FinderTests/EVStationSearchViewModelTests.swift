@@ -34,7 +34,7 @@ final class EVStationSearchViewModelTests: XCTestCase {
             zip: "12345",
             latitude: 0,
             longitude: 0,
-            fuelTypeCode: "",
+            fuelType: .electric,
             evConnectorTypes: nil
         )
         mockFuelStationFinderService.result = .success([expectedStation])
